@@ -36,10 +36,11 @@ const loadNews = async categoryID => {
 const displayNews = allNews => {
     const allNewsCard = document.getElementById('all-news');
     allNewsCard.textContent = '';
+    document.getElementById('items-count').innerText = `${allNews.length} news found!`;
     allNews.forEach(news => {
         const allNewsDiv = document.createElement('div');
         allNewsDiv.innerHTML =
-            `
+        `
         <div class="row g-0 my-3 border p-2 rounded-3">
             <div class="col-md-4">
                 <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
