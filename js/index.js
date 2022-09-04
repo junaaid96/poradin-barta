@@ -1,8 +1,13 @@
 const loadCategories = async () => {
     const url = 'https://openapi.programming-hero.com/api/news/categories';
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCategories(data.data.news_category);
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCategories(data.data.news_category);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 const displayCategories = categories => {
@@ -27,9 +32,14 @@ loadCategories();
 const loadNews = async categoryID => {
     toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/0${categoryID}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNews(data.data);
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNews(data.data);
+    }
+    catch (error) {
+        console.log(error);
+    }
 
 }
 
@@ -40,7 +50,7 @@ const displayNews = allNews => {
     allNews.forEach(news => {
         const allNewsDiv = document.createElement('div');
         allNewsDiv.innerHTML =
-        `
+            `
         <div class="row g-0 my-3 border p-2 rounded-3">
             <div class="col-md-4">
                 <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
@@ -69,9 +79,14 @@ const displayNews = allNews => {
 
 const loadNewsModal = async newsID => {
     const url = `https://openapi.programming-hero.com/api/news/${newsID}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNewsModal(data.data);
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNewsModal(data.data);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 const displayNewsModal = allNewsModal => {
