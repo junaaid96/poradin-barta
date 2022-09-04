@@ -54,7 +54,7 @@ const displayNews = allNews => {
                             <p class="mx-3">${news.author.name}</p>
                         </div>
                         <p><i class="fa-regular fa-eye"></i> ${news.total_view}</p>
-                        <button class="btn btn-warning">View News</button> 
+                        <button onclick="displayNewsModal('${news._id}')" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#newsModal">View News</button> 
                     </div>          
                 </div>
             </div>
@@ -62,6 +62,14 @@ const displayNews = allNews => {
         `;
         allNewsCard.appendChild(allNewsDiv);
     });
+    
 }
 
+const displayNewsModal = viewNews => {
+    console.log(viewNews);
+}
+
+
+
 loadNews(8);
+
