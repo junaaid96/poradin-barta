@@ -74,6 +74,7 @@ const loadNewsModal = async newsID => {
 
 const displayNewsModal = allNewsModal => {
     const modalSection = document.getElementById('view-news-modal');
+    modalSection.textContent = '';
     allNewsModal.forEach(newsModal => {
         const modalDiv = document.createElement('div');
         modalDiv.innerHTML =
