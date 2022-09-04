@@ -47,7 +47,12 @@ const displayNews = allNews => {
                 <div class="card-body">
                     <h5 class="card-title">${news.title}</h5>
                     <p class="card-text my-3">${news.details}</p>
-                             
+                    <div class="d-flex justify-content-between mt-5">
+                        <div class="d-flex">
+                            <img src="${news.author.img}" class="rounded-circle" alt="..." width="40" height="40">
+                            <p class="mx-3">${news.author.name}</p>
+                        </div>
+                    </div>          
                 </div>
             </div>
         </div>
