@@ -51,9 +51,9 @@ const displayNews = allNews => {
                     <div class="d-flex justify-content-between mt-5">
                         <div class="d-flex">
                             <img src="${news.author.img}" class="rounded-circle" alt="..." width="40" height="40">
-                            <p class="mx-3">${news.author.name}</p>
+                            <p class="mx-3">${news.author.name ? news.author.name : 'author info not available!'}</p>
                         </div>
-                        <p><i class="fa-regular fa-eye"></i> ${news.total_view}</p>
+                        <p><i class="fa-regular fa-eye"></i> ${news.total_view ? news.total_view : 'total views not available!'}</p>
                         <button onclick="loadNewsModal('${news._id}')" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#newsModal">View News</button> 
                     </div>          
                 </div>
@@ -86,9 +86,9 @@ const displayNewsModal = allNewsModal => {
             <div class="d-flex justify-content-between mt-5">
                 <div class="d-flex">
                     <img src="${newsModal.author.img}" class="rounded-circle" alt="..." width="40" height="40">
-                    <p class="mx-3">${newsModal.author.name}</p>
+                    <p class="mx-3">${newsModal.author.name ? newsModal.author.name : 'author info not available!'}</p>
                 </div>
-                <p><i class="fa-regular fa-eye"></i> ${newsModal.total_view}</p>
+                <p><i class="fa-regular fa-eye"></i> ${newsModal.total_view ? newsModal.total_view : 'total views not available!'}</p>
             </div>    
         </div>
         <div class="modal-footer">
