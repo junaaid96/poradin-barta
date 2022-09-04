@@ -46,7 +46,8 @@ const displayNews = allNews => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">${news.title}</h5>
-                    <p class="card-text my-3">${news.details}</p>
+                    <p class="card-text my-3">${news.details.slice(0,300)}</p>
+                    <p class="card-text text-truncate my-3">${news.details.slice(300)}</p>
                     <div class="d-flex justify-content-between mt-5">
                         <div class="d-flex">
                             <img src="${news.author.img}" class="rounded-circle" alt="..." width="40" height="40">
@@ -63,4 +64,4 @@ const displayNews = allNews => {
     });
 }
 
-loadNews(1);
+loadNews(8);
