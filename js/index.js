@@ -52,6 +52,8 @@ const displayNews = allNews => {
                             <img src="${news.author.img}" class="rounded-circle" alt="..." width="40" height="40">
                             <p class="mx-3">${news.author.name}</p>
                         </div>
+                        <p><i class="fa-regular fa-eye"></i> ${news.total_view}</p>
+                        <button class="btn btn-warning">View News</button> 
                     </div>          
                 </div>
             </div>
@@ -60,4 +62,5 @@ const displayNews = allNews => {
         allNewsCard.appendChild(allNewsDiv);
     });
 }
-    
+
+loadNews(1);
